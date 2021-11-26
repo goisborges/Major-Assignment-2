@@ -1,75 +1,52 @@
 //"COMP 1073: Client-Side JavaScript"
 //"Assignment 2"
 //Team 5
-//Members:Jennifer Mendez Chan, Marcos De Gois Borgues, Alex Victor Marques Moreira, Amra Mohamed Akram"
+//Members:Jennifer Mendez Chan, Marcos De Gois Borgues, Alex Vitor Marques Moreira da Cunha, Amra Mohamed Akram"
 
 
 //Question 1
 //A)Create a function to change the page background color to fucsia
 
-//Event listener
-document.getElementById("changeBackgroundColor").addEventListener("click", changeBackgroundColor);
-
-//Function to change background color
-function changeBackgroundColor() {
-    document.body.style.backgroundColor = "fuchsia";
-}
+//Event listener that changes background color
+document.getElementById("changeBackgroundColor").addEventListener("click", function(){
+    document.body.style.backgroundColor = "fuchsia";});
 
 //B)Create a function to change the color of the h1 element class title to green and change the text to "Welcome to Georgian College"
 
-//Event listener
-document.getElementById("changeTitle").addEventListener("click", changeTitle);
-
-//Function to change title
-function changeTitle() {
+//Event listener that changes the title color and text
+document.getElementById("changeTitle").addEventListener("click", function() {
     var title = document.getElementsByClassName("title");
     title[0].style.color = "green";
     title[0].innerHTML = "Welcome to Georgian College";
-}
+});
 
-//C)Inside “<div id="course-list">” create and insert two ordered list displaying two more coursesIOS-1 &IOS-2.
+
+//C)Inside “<div id="course-list">” create and insert two ordered list displaying two more courses IOS-1 & IOS-2.
 // You also have to create classes for these courses. The newly added course & delete button should have a 
 //different Text color(yellow), font size (40), font family (Algerian). With both new courses append a text
 //” This a new course”
 
-	//Add first course
-    var li = document.createElement("li");
-    var courseSpan = document.createElement("span");
-    var deleteButton = document.createElement("span");
-	var ulFromList = document.querySelector("#course-list ul");	
-	
-	//Add text inside elements
-    li.appendChild(courseSpan).innerHTML="IOS-1";
-    li.appendChild(deleteButton).innerHTML="delete";
-	ulFromList.appendChild(li);
-	
-	//Add classes
-	deleteButton.className = "deleteNew";
-    courseSpan.className = "nameNew"
+    //Add courses using a loop
+    for(var i = 1; i < 3; i++){
+        //Add course
+        var li = document.createElement("li");
+        var courseSpan = document.createElement("span");
+        var deleteButton = document.createElement("span");
+        var ulFromList = document.querySelector("#course-list ul");	
+        
+        //Add text inside elements
+        li.appendChild(courseSpan).innerHTML="IOS-" + i;
+        li.appendChild(deleteButton).innerHTML="delete";
+        ulFromList.appendChild(li);
+        
+        //Add classes
+        deleteButton.className = "deleteNew";
+        courseSpan.className = "nameNew";
 
-	//Append text
-	li.appendChild(courseSpan).textContent+="This is a new course";
+        //Append text
+        li.appendChild(courseSpan).textContent+="This is a new course";
+    }
 
-
-
-	//Add second course
-    var li = document.createElement("li");
-    var courseSpan = document.createElement("span");
-    var deleteButton = document.createElement("span");
-	var ulFromList = document.querySelector("#course-list ul");
-	
-	//Add text inside elements
-    li.appendChild(courseSpan).innerHTML="IOS-2";
-    li.appendChild(deleteButton).innerHTML="delete";
-	ulFromList.appendChild(li);
-	
-	//Add classes
-	deleteButton.className = "deleteNew";
-    courseSpan.className = "nameNew"
-
-	//Append text
-	li.appendChild(courseSpan).textContent+="This is a new course";
-	
 	//functioning delete buttons
 	
 
