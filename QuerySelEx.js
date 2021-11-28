@@ -26,6 +26,7 @@ document.getElementById("changeTitle").addEventListener("click", function() {
 //different Text color(yellow), font size (40), font family (Algerian). With both new courses append a text
 //” This a new course”
 
+    var ol = document.createElement("ol");
     //Add courses using a loop
     for(var i = 1; i < 3; i++){
         //Add course
@@ -37,7 +38,8 @@ document.getElementById("changeTitle").addEventListener("click", function() {
         //Add text inside elements
         li.appendChild(courseSpan).innerHTML="IOS-" + i;
         li.appendChild(deleteButton).innerHTML="delete";
-        ulFromList.appendChild(li);
+        ol.appendChild(li);
+        ulFromList.appendChild(ol);
         
         //Add classes
         deleteButton.className = "deleteNew";
@@ -132,12 +134,12 @@ addForm.addEventListener("submit", function(e){
 	//anchor
 	
     var a = document.createElement("a");
-	const target = document.querySelector("#changeBackgroundColor");
+	const target = document.querySelector("#page-banner br");
 	target.parentNode.insertBefore(a, target);
 
 	
 	
 	//Add text and link inside elements
     a.innerHTML="Click Me";
-	a.setAttribute("href", "https://www.youtube.com/watch?v=QH2-TGUlwu4")
+	a.setAttribute("href", "https://www.youtube.com/watch?v=QH2-TGUlwu4");
 	a.className="name";
